@@ -6,5 +6,6 @@ node {
             echo 'I execute elsewhere'
         }
         sh 'terraform plan'
+        sh 'terraform validate'
     }
 }

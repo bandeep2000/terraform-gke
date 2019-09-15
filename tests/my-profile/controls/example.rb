@@ -3,17 +3,7 @@
 
 title 'sample section'
 
-# you can also use plain tests
-describe file('/tmp') do
-  it { should be_directory }
-end
 
-# you add controls here
-control 'tmp-1.0' do                        # A unique ID for this control
-  impact 0.7                                # The criticality, if this control fails.
-  title 'Create /tmp directory'             # A human-readable title
-  desc 'An optional description...'
-  describe file('/tmp') do                  # The actual test
-    it { should be_directory }
-  end
+describe google_container_clusters(project: 'chef-inspec-gcp', zone: 'europe-west2-a') do
+  its('cluster_names') { should include "my-cluster" }
 end
