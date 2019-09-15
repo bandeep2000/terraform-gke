@@ -2,7 +2,7 @@ node {
     stage('Example') {
         if (env.BRANCH_NAME == 'master') {
             echo 'I only execute on the master branch'
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '19395f7f-05f7-4e25-be07-4816408ea1f9', url: 'https://github.com/bandeep2000/kubernetes-ban.git']]])
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '19395f7f-05f7-4e25-be07-4816408ea1f9', url: 'https://github.com/bandeep2000/terraform-gke.git']]])
         } else {
             echo 'I execute elsewhere'
         }
