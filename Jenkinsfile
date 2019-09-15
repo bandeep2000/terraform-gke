@@ -5,6 +5,7 @@ node {
         } else {
             echo 'I execute elsewhere'
         }
+        sh 'terraform init'
         sh 'terraform plan'
         sh 'terraform validate'
     }
